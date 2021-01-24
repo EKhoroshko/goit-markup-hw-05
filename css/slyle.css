@@ -222,6 +222,51 @@ a.mail:focus {
     cursor:pointer;
 }
 
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    z-index: 3;
+    padding: 8px;
+
+    min-width: 528px;
+    min-height: 581px;
+    background-color: var(--background-main-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal-button{
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    background-color: var(--background-main-color);
+}
+
 .warrantly-conteiner{
      padding-top: 94px;
      padding-bottom: 94px;
@@ -310,6 +355,7 @@ a.mail:focus {
 .occupation-box2,
 .occupation-box3{
     position: relative;
+    z-index: -1;
 }
     
 .occupation img{
@@ -319,7 +365,7 @@ a.mail:focus {
 .occupation-title{
     position: absolute;
     bottom: 0;
-    min-width: 370px;
+    min-width: 100%;
     background: rgba(47, 48, 58, 0.8);
 
     padding-top: 27px;
@@ -682,4 +728,48 @@ a.connection{
 
 .progect-box{
     padding: 20px 24px;
+}
+
+.project1,
+.project2{
+    position: relative;
+}
+
+.project1::before{
+    display: inline-block;
+    padding: 63px 24px;
+    content: "Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.project1:hover::before{
+    opacity: 1;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project2::before{
+     display: inline-block;
+     content: " ";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(33, 150, 243, 0.9);
+
+     opacity: 0;
+}
+
+.project2:hover::before{
+     opacity: 1;
+     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

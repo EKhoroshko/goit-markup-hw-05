@@ -43,8 +43,15 @@
         <section class="hero"> 
             <div class="hero-conteiner">   
                  <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                 <button class="hero-link" type="button">Заказать услугу</button>
-            </div>  
+                 <button class="hero-link" type="button" data-modal-open>Заказать услугу</button>
+            </div>
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                   <button class="modal-button" type="button" data-modal-close>
+                       <img class="modal-icon" src="./images/close.svg" alt="крестик" >
+                   </button> 
+                </div>
+            </div> 
         </section>  
   
         <section class="warranty">
@@ -351,6 +358,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
 
